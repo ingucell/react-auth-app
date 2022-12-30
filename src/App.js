@@ -1,9 +1,10 @@
 import React from 'react';
+import SignUp from './pages/SignUp';
 
 function App() {
   return (
    <>
-   <h3>Start</h3>
+    <SignUp />
    </>
   );
 }

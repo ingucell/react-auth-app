@@ -1,0 +1,33 @@
+.form-container{
+    display: grid;
+    width: 100%;
+    gap:1rem;
+    justify-content: center;
+    margin:10% 0rem;
+}
+
+input{
+    padding: 1rem;
+    width: 40rem;
+    border-radius: 0.5rem;
+    outline: none;
+}
+
+button{
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 10rem;
+    background-color: rgb(84, 84, 243);
+    border: none;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color:rgb(63, 63, 216) ;
+}
+
+.heading{
+    display: grid;
+    justify-content: center;position: relative;
+    top:4rem
+}
