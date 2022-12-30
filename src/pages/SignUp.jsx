@@ -2,8 +2,11 @@ import React, {useState} from 'react'
 import {getAuth, createUserWithEmailAndPassword, updateProfile} from 'firebase/auth'
 import {db} from '../firebase.config'
 import './pages.css'
+import {useNavigate} from 'react-router-dom'
 
 function SignUp() {
+   const navigate = useNavigate()
+
   const [FormData, setFormData] = useState({
     email: '',
     password: ''
@@ -16,15 +19,18 @@ function SignUp() {
 
     try{
     const auth = getAuth()
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password)
+    const userCredential = await createUserWithEmailAndPassword(auth, email[0], password[0])
+
+
+    
 
     //for db
     const user = userCredential.user
 
     updateProfile(auth.currentUser, {
-      displayName: email
+      displayEmail: email
     })
-
+    navigate('/home')
   
     }catch(error){
     console.log(error)
